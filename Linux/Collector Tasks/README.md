@@ -1,93 +1,33 @@
-# 🚀 Collector Scripts to use on Linux Tactical RMM Agents
+# 🚀 Collector Tasks Scripts for Linux Tactical RMM
 
-Welcome to the **Collector Scripts for Tactical Agent** Folder! This Folder contains a collection of scripts designed to be run using Tactical RMM with the Tactical agent.
+Welcome to the **Collector Tasks** folder! This folder contains scripts designed to collect system information and verify critical services on Linux agents running with Tactical RMM.
 
-## 📜 Scripts Overview
+## 📋 Scripts Overview
 
-### 1. [Check - Docker Service.sh](Linux/Collector%20Tasks/Check%20-%20Docker%20Service.sh)
+| Script | Category | Description |
+|--------|----------|-------------|
+| [Check - Docker Service.sh](Check%20-%20Docker%20Service.sh) | Check | Verifies if Docker service is running |
+| [Check - SSH Service.sh](Check%20-%20SSH%20Service.sh) | Check | Verifies if SSH service is running |
+| [Check - Third Party Patch Status.sh](Check%20-%20Third%20Party%20Patch%20Status.sh) | Check | Checks third-party patch status |
+| [Agent - ClamAV Status.sh](Agent%20-%20ClamAV%20Status.sh) | Agent | Checks if ClamAV/ClamScan is running |
+| [Collect - SSH Port.sh](Collect%20-%20SSH%20Port.sh) | Collect | Retrieves the configured SSH port (even if non-standard) |
+| [Security - SSH Root Access.sh](Security%20-%20SSH%20Root%20Access.sh) | Security | Verifies root SSH access is disabled |
+| [Security - UFW Status.sh](Security%20-%20UFW%20Status.sh) | Security | Checks UFW firewall status |
+| [Software Management - Nala Install Status.sh](Software%20Management%20-%20Nala%20Install%20Status.sh) | Software Management | Checks if Nala package manager is installed (installs if missing) |
+| [Software Management - Unattended Upgrades Status.sh](Software%20Management%20-%20Unattended%20Upgrades%20Status.sh) | Software Management | Verifies unattended-upgrades installation and status |
 
-- **Description**: This will check if docker is running.
-- **NOTE*:* Can always add compose too if need to be.
+## 📝 Notes
 
+- **Nala Project:** Learn more at [https://gitlab.com/volian/nala](https://gitlab.com/volian/nala)
+- **UFW Setup:** See [Security - UFW Provision.sh](../Security/UFW/Security%20-%20UFW%20Provision.sh) for firewall provisioning
+- **Exit Codes:** 0 = OK, 1 = alert/failure, 2 = secondary state
 
-### 2. [Check - SSH Service.sh](Linux/Collector%20Tasks/Check%20-%20SSH%20Service.sh)
+## 🎯 Recommended Usage
 
-- **Description**: Check if SSH is Running.
+These scripts are ideal for:
+- Daily service health checks
+- Security verification
+- System inventory collection
+- Automated compliance checks
 
-
-### 3. [Agent - ClamAV Status.sh](Linux/Collector%20Tasks/Agent%20-%20ClamAV%20Status.sh)
-
-- **Description**: Check if Clamav/ClamScan is Running.
-
-
-### 4. [Software Management - Nala Install Status.sh](Linux/Collector%20Tasks/Software%20Management%20-%20Nala%20Install%20Status.sh)
-
-- **Description**: Check if Nala Package manager is installed if not attempt to install it.
-- **NOTE:** Worth checking there Project [here](https://gitlab.com/volian/nala).
-
-
-### 5. [Collect - SSH Port.sh](Linux/Collector%20Tasks/Collect%20-%20SSH%20Port.sh)
-
-- **Description**: Fetchs the Port for ssh, even if its not 22.
-- **NOTE**: This should be Changed as a default.
-
-
-### 6. [Security - SSH Root Access.sh](Linux/Collector%20Tasks/Security%20-%20SSH%20Root%20Access.sh)
-
-- **Description**: Checks to make sure that the root user is disabled from SSH.
-- **NOTE**: This should be done as a default.
-
-
-### 7. [Security - UFW Status.sh](Linux/Collector%20Tasks/Security%20-%20UFW%20Status.sh)
-
-- **Description**: Checks to see active status of UFW.
-- **NOTE**: This should Setup as a default. [here](https://github.com/Brandon-Roff/TRMM-Scripts/blob/main/Linux/Security/UFW/UFW_%20Install%20and%20Prevision%20firewall.sh) is a script to install and preprovision your server with UFW
-
-
-### 8. [Software Management - Unattended Upgrades Status.sh](Linux/Collector%20Tasks/Software%20Management%20-%20Unattended%20Upgrades%20Status.sh)
-
-- **Description**: Checks to see if unatended upgrades is installed if not try to install it
-- **NOTE**: This should be done as a default.
-
-
-
-
-
-## 🛣️ Roadmap
-## Short-term Goals (1-6 months)
-### Script Enhancements and Maintenance
-- [ ] Add Docker Compose Check: Enhance the existing "Check Docker is Running" script to include a check for Docker Compose.
-- [ ] Update Default SSH Port Check: Modify the "SSH Port Fetch" script to handle custom configurations and provide more comprehensive reporting.
-- [ ] Enhance UFW Script: Update the "UFW Status" script to provide more detailed output, including active rules and logging status.
-
-### New Monitoring Scripts
-- [ ] **Service Status Check**
-  - [ ] Create scripts to check the status of additional critical services like Apache, Nginx, MySQL, and PostgreSQL.
-- [ ] **Resource Monitoring**
-  - [ ] Develop scripts to monitor CPU usage, memory usage, disk space, and network activity.
-- [ ] **Log File Monitoring**
-  - [ ] Write scripts to check and report on specific log file entries, such as /var/log/syslog or /var/log/auth.log.
-
-## Mid-term Goals (6-12 months)
-### Security and Compliance
-- [ ] **Firewall Rule Checker**
-  - [ ] Develop a script to verify custom firewall rules and compare them against a predefined security baseline.
-- [ ] **Rootkit Check**
-  - [ ] Create a script to check for the presence of rootkits using tools like chkrootkit or rkhunter.
-- [ ] **SELinux/AppArmor Status**
-  - [ ] Write scripts to check the status and configuration of SELinux or AppArmor policies.
-
-### Automation and Remediation
-- [ ] **Automatic Service Restarts**
-  - [ ] Develop scripts that not only check service status but also attempt to restart the service if it is found to be stopped.
-- [ ] **Patch Management**
-  - [ ] Create a comprehensive script for checking, downloading, and applying security patches across multiple distributions.
-
-## Long-term Goals (12-24 months)
-### Advanced Monitoring and Analytics
-- [ ] **Performance Metrics Collection**
-  - [ ] Develop scripts that collect performance metrics over time and integrate with monitoring tools like Prometheus or Grafana.
-
-
-
-
+Integrate these scripts with Tactical RMM automation rules for continuous monitoring.

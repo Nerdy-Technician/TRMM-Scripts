@@ -1,30 +1,20 @@
+# ⏰ Crontab Scripts for Linux Tactical RMM
 
-# ⏰ Crontab
+This folder contains scripts for managing and verifying crontab entries on Linux systems.
 
-Welcome to the **Crontab** folder! Here you'll find scripts to help automate and monitor scheduled tasks on Linux systems using crontab.
+## 📋 Scripts Overview
 
-## 📂 Folder Description
-This folder is your toolkit for:
-- Scheduled security scans
-- Automated updates
-- System maintenance
+| Script | Category | Description |
+|--------|----------|-------------|
+| [Cron - ClamScan Entry.sh](Cron%20-%20ClamScan%20Entry.sh) | Cron | Manages ClamScan crontab entries |
+| [Cron - Nala Update Entry.sh](Cron%20-%20Nala%20Update%20Entry.sh) | Cron | Manages Nala update crontab entries |
+| [Cron - Weekly Reboot Entry.sh](Cron%20-%20Weekly%20Reboot%20Entry.sh) | Cron | Manages scheduled weekly reboot entries |
 
----
+## 🎯 Usage
 
-## 📜 Script List & Descriptions
-| Script | Description |
-|--------|-------------|
-| **Cron - ClamScan Entry.sh** | Verifies ClamAV scan entry exists (reports existing line). |
-| **Cron - Nala Update Entry.sh** | Ensures weekly Nala upgrade entry exists (adds if missing). |
-| **Cron - Weekly Reboot Entry.sh** | Adds weekly reboot schedule if absent. |
+These scripts help configure automated tasks:
+- Regular malware scans with ClamScan
+- Package manager updates via Nala
+- Scheduled system reboots
 
----
-
-## ✨ Why Use These Scripts?
-- **Automation:** Keep your systems maintained with minimal effort.
-- **Security:** Ensure regular scans and updates are happening.
-- **Reliability:** Prevent missed maintenance windows.
-
----
-
-Happy automating! 🤖
+**Exit Codes:** 0 = entry exists/created, 1 = error/conflict

@@ -1,28 +1,19 @@
+# 🎨 Customization Scripts for Linux Tactical RMM
 
-# 🎨 Customization
+Scripts for personalizing and customizing Linux system environment.
 
-Welcome to the **Customization** folder! Here you'll find scripts to personalize and optimize your Linux environment for productivity and style.
+## 📋 Scripts Overview
 
-## 📂 Folder Description
-This folder is your toolkit for:
-- Bash prompt customization
-- Environment tweaks
-- User experience improvements
+| Script | Category | Description |
+|--------|----------|-------------|
+| [Customize - Global Bashrc.sh](Customize%20-%20Global%20Bashrc.sh) | Customize | Applies custom global bashrc modifications for all users |
 
----
+## 🎯 Features
 
-## 📜 Script List & Descriptions
-| Script | Description |
-|--------|-------------|
-| **Customize - Global Bashrc.sh** | Applies a customized global bashrc with aliases & prompt tweaks. |
+Customize shell environments with:
+- Custom aliases
+- Enhanced prompts
+- Environment variables
+- Shell functions
 
----
-
-## ✨ Why Use These Scripts?
-- **Productivity:** Work faster with custom aliases and functions.
-- **Personalization:** Make your shell truly yours.
-- **Efficiency:** Optimize your workflow and environment.
-
----
-
-Happy customizing! 🎉
+**Exit Codes:** 0 = success, 1 = error
